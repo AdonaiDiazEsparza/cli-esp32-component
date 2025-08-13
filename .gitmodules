@@ -1,0 +1,3 @@
+[submodule "cli-core"]
+	path = cli-core
+	url = https://github.com/AdonaiDiazEsparza/cli-core.git
