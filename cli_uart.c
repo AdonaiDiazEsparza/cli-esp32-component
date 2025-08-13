@@ -46,11 +46,11 @@ void cli_uart_general_help()
 }
 
 // Start configuration
-void cli_uart_set_configuration(uint32_t baudrate, cli_calls_t cli_calls_handlers, uint32_t cli_commands_total_enum, const char** commands, void *context)
+void cli_uart_set_configuration(uint32_t baudrate, cli_command_t comands[] ,uint16_t cli_commands_total_enum, void *context)
 {
-    cli_uart.calls_for_work = cli_calls_handlers;
-    cli_uart.text_commands = commands;
-    cli_uart.count_of_commands = cli_commands_total_enum;
+
+
+    cli_set_commands(&cli_uart, comands, cli_commands_total_enum);
     cli_uart.context = context;
     cli_uart.actual_command = 0;
     cli_uart.process_running = false;
