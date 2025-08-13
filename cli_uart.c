@@ -46,7 +46,7 @@ void cli_uart_general_help()
 }
 
 // Start configuration
-void cli_uart_set_configuration(uint32_t baudrate, void *context)
+void cli_uart_set_configuration(uint32_t baudrate, cli_calls_t cli_calls_handlers, uint32_t cli_commands_total_enum, const char** commands, void *context)
 {
     cli_uart.calls_for_work = cli_calls_handlers;
     cli_uart.text_commands = commands;

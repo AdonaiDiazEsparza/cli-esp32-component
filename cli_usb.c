@@ -62,7 +62,7 @@ static void usb_cdc_rx_callback(int itf, cdcacm_event_t *event)
     }
 }
 
-void cli_usb_set_configuration(void *context)
+void cli_usb_set_configuration(cli_calls_t cli_calls_handlers, uint32_t cli_commands_total_enum, const char** commands, void *context)
 {
     cli_usb.calls_for_work = cli_calls_handlers;
     cli_usb.text_commands = commands;

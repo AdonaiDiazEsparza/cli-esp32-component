@@ -13,7 +13,7 @@
 #include "tusb_cdc_acm.h"
 #include "cli_core.h"
 
-void cli_usb_set_configuration(void *context);
+void cli_usb_set_configuration(cli_calls_t cli_calls_handlers, uint32_t cli_commands_total_enum, const char** commands, void *context);
 void cli_usb_init(void);
 void cli_usb_print(const char* format, ...);
 void cli_usb_set_in_process_command();
