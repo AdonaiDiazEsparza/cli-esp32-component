@@ -48,8 +48,6 @@ void cli_uart_general_help()
 // Start configuration
 void cli_uart_set_configuration(uint32_t baudrate, cli_command_t comands[] ,uint16_t cli_commands_total_enum, void *context)
 {
-
-
     cli_set_commands(&cli_uart, comands, cli_commands_total_enum);
     cli_uart.context = context;
     cli_uart.actual_command = 0;
