@@ -30,7 +30,7 @@ void cli_usb_general_help()
     cli_usb_print("\r\nComandos disponibles:\r\n");
     for (uint32_t i = 0; i < cli_usb.count_of_commands; i++)
     {
-        cli_usb_print(" - %s\r\n", cli_usb.text_commands[i]);
+        cli_usb_print(" - %s\r\n", cli_usb.commands[i].command_text);
     }
 }
 
@@ -62,7 +62,7 @@ static void usb_cdc_rx_callback(int itf, cdcacm_event_t *event)
 
 void cli_usb_set_configuration(cli_command_t comands[] ,uint16_t cli_commands_total_enum, void *context)
 {
-    cli_set_commands(&cli_uart, comands, cli_commands_total_enum);
+    cli_set_commands(&cli_usb, comands, cli_commands_total_enum);
     cli_usb.context = context;
     cli_usb.actual_command = 0;
     cli_usb.process_running = false;

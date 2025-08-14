@@ -41,7 +41,7 @@ void cli_uart_general_help()
     cli_uart_print("\r\nComandos disponibles:\r\n");
     for (uint32_t i = 0; i < cli_uart.count_of_commands; i++)
     {
-        cli_uart_print(" - %s\r\n", cli_uart.text_commands[i]);
+        cli_uart_print(" - %s\r\n", cli_uart.commands[i].command_text);
     }
 }
 
