@@ -16,7 +16,7 @@ static int line_pos = 0;
 static void uart_event_task(void *pvParameters);
 
 void cli_uart_set_in_process_command(){
-    cli_set_in_process_command(&cli_uart);
+    cli_start_process(&cli_uart);
 }
 
 // Supposed to work to print the cli

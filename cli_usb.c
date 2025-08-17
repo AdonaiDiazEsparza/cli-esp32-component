@@ -1,4 +1,7 @@
 #include "cli_usb.h"
+
+#if CONFIG_IDF_TARGET_ESP32S3 || CONFIG_IDF_TARGET_ESP32C3 || CONFIG_IDF_TARGET_ESP32C6
+
 #include "driver/usb_serial_jtag.h"
 #include "esp_vfs_usb_serial_jtag.h"
 
@@ -12,7 +15,7 @@ static int usb_line_pos = 0;
 
 void cli_usb_set_in_process_command()
 {
-    cli_set_in_process_command(&cli_usb);
+    cli_start_process(&cli_usb);
 }
 
 void cli_usb_stop_process()
@@ -104,3 +107,5 @@ void cli_usb_init()
     // crea la tarea que maneja RX
     xTaskCreate(cli_usb_task, "cli_usb_task", 4096, NULL, 5, NULL);
 }
+
+#endif
